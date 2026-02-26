@@ -141,7 +141,12 @@ export class EmployeeDetailPage {
   }
 
   asDate(iso?: string | null): string {
-    return iso ? iso.slice(0, 10) : '-';
+    if (!iso) return '-';
+
+    const [year, month, day] = iso.slice(0, 10).split('-');
+    if (!year || !month || !day) return iso;
+
+    return `${Number(day)}. ${Number(month)}. ${year}`;
   }
 
   genderLabel(g?: Gender): string {

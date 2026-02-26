@@ -225,7 +225,7 @@
                       [formControl]="salaryRowForm.controls.from" />
                   </ng-container>
                   <ng-template #viewFrom>
-                    <span class="text-body-secondary">{{ s.from?.slice(0, 10) ?? '-' }}</span>
+                    <span class="text-body-secondary">{{ formatDisplayDate(s.from) }}</span>
                   </ng-template>
                 </td>
 
@@ -235,7 +235,7 @@
                       [formControl]="salaryRowForm.controls.to" />
                   </ng-container>
                   <ng-template #viewTo>
-                    <span class="text-body-secondary">{{ s.to?.slice(0, 10) ?? '-' }}</span>
+                    <span class="text-body-secondary">{{ formatDisplayDate(s.to) }}</span>
                   </ng-template>
                 </td>
 

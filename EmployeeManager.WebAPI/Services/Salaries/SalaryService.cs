@@ -172,7 +172,7 @@ public sealed class SalaryService : ISalaryService
                 ct);
 
         return overlaps
-            ? "Salary interval overlaps with an existing salary for this employee."
+            ? "Rozmezí se překrývá jiným platem tohoto zaměstnance."
             : null;
     }
 }

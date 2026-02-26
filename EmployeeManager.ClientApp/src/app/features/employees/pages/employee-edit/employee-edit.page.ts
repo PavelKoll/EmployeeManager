@@ -174,7 +174,7 @@ export class EmployeeEditPage {
         this.ready.set(true);
       },
       error: (err) => {
-        this.error.set(err?.error ?? 'Nepodařilo se načíst data pro úpravu.');
+        this.error.set(this.getApiErrorMessage(err, 'Nepodařilo se načíst data pro úpravu.'));
         this.loading.set(false);
         this.ready.set(false);
       },
@@ -241,13 +241,13 @@ export class EmployeeEditPage {
             this.router.navigateByUrl(`/employees/${id}`);
           },
           error: (err) => {
-            this.salaryError.set(err?.error ?? 'Nepodařilo se vytvořit nový plat.');
+            this.salaryError.set(this.getApiErrorMessage(err, 'Nepodařilo se vytvořit nový plat.'));
             this.saving.set(false);
           },
         });
       },
       error: (err) => {
-        this.error.set(err?.error ?? 'Uložení se nezdařilo.');
+        this.error.set(this.getApiErrorMessage(err, 'Uložení se nezdařilo.'));
         this.saving.set(false);
       },
     });
@@ -370,10 +370,53 @@ export class EmployeeEditPage {
         });
       },
       error: (err) => {
-        this.salaryError.set(err?.error ?? 'Aktualizace platu se nezdařila.');
+        this.salaryError.set(this.getApiErrorMessage(err, 'Aktualizace platu se nezdařila.'));
         this.saving.set(false);
       },
     });
+  }
+
+  private getApiErrorMessage(err: any, fallback: string): string {
+    const raw = err?.error;
+
+    if (typeof raw === 'string') {
+      const trimmed = raw.trim();
+      if (trimmed) return trimmed;
+    }
+
+    if (typeof raw?.title === 'string' && raw.title.trim()) {
+      return raw.title.trim();
+    }
+
+    if (typeof raw?.message === 'string' && raw.message.trim()) {
+      return raw.message.trim();
+    }
+
+    if (raw?.errors && typeof raw.errors === 'object') {
+      const messages = Object.values(raw.errors)
+        .flatMap((value) => Array.isArray(value) ? value : [value])
+        .filter((value): value is string => typeof value === 'string' && !!value.trim())
+        .map((value) => value.trim());
+
+      if (messages.length) {
+        return messages.join(' ');
+      }
+    }
+
+    if (typeof err?.message === 'string' && err.message.trim()) {
+      return err.message.trim();
+    }
+
+    return fallback;
+  }
+
+  formatDisplayDate(iso?: string | null): string {
+    if (!iso) return '-';
+
+    const [year, month, day] = iso.slice(0, 10).split('-');
+    if (!year || !month || !day) return iso;
+
+    return `${Number(day)}. ${Number(month)}. ${year}`;
   }
 
   private toDateInput(iso?: string | null): string {
