@@ -1,0 +1,35 @@
+/* .error {
+  color: #b00020;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 10px;
+  max-width: 820px;
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.checkbox-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.actions {
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+} */
+
+/* keep dropdown menus usable */
+.dropdown-scroll {
+  max-height: 280px;
+  overflow: auto;
+}

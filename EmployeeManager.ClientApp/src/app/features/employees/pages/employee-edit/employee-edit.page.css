@@ -1,0 +1,61 @@
+/* .error {
+  color: #b00020;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 220px minmax(280px, 420px); 
+  gap: 10px;
+}
+
+.form-grid input,
+.form-grid select {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.checkbox-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.actions {
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 920px;
+}
+
+.table th, .table td {
+  border: 1px solid #ddd;
+  padding: 6px;
+}
+
+.row-actions {
+  white-space: nowrap;
+  display: flex;
+  gap: 8px;
+}
+
+.table input {
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 180px;
+} */
+
+.dropdown-scroll {
+  max-height: 280px;
+  overflow: auto;
+}

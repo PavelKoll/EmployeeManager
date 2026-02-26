@@ -1,0 +1,15 @@
+export * from './addresses.service';
+import { AddressesService } from './addresses.service';
+export * from './cities.service';
+import { CitiesService } from './cities.service';
+export * from './countries.service';
+import { CountriesService } from './countries.service';
+export * from './employeeManagerWebAPI.service';
+import { EmployeeManagerWebAPIService } from './employeeManagerWebAPI.service';
+export * from './employees.service';
+import { EmployeesService } from './employees.service';
+export * from './jobCategories.service';
+import { JobCategoriesService } from './jobCategories.service';
+export * from './salaries.service';
+import { SalariesService } from './salaries.service';
+export const APIS = [AddressesService, CitiesService, CountriesService, EmployeeManagerWebAPIService, EmployeesService, JobCategoriesService, SalariesService];

@@ -1,0 +1,263 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <div>
+    <h1 class="h4 page-title mb-0">Úprava zaměstnance</h1>
+    <div class="text-body-secondary small">Aktualizace informací o zaměstnanci</div>
+  </div>
+
+  <a class="btn btn-sm btn-outline-secondary" [routerLink]="['/employees', employeeId()]">
+    <i class="bi bi-arrow-left me-1"></i>Zpět na detail
+  </a>
+</div>
+
+<div *ngIf="error()" class="alert alert-danger">{{ error() }}</div>
+
+<div *ngIf="loading()" class="d-flex align-items-center gap-2 text-body-secondary mb-3">
+  <div class="spinner-border spinner-border-sm" aria-hidden="true"></div>
+  Načítám...
+</div>
+
+<form *ngIf="ready()" [formGroup]="form" (ngSubmit)="save()">
+  <fieldset [disabled]="saving()">
+    <div class="card shadow-sm mb-4">
+      <div class="card-body">
+        <div class="row g-3">
+
+          <div class="col-12 col-md-6">
+            <label class="form-label">Jméno *</label>
+            <input class="form-control" formControlName="firstName"
+              [class.is-invalid]="form.controls.firstName.touched && form.controls.firstName.invalid" />
+            <div class="invalid-feedback">Povinné</div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label class="form-label">Příjmení *</label>
+            <input class="form-control" formControlName="lastName"
+              [class.is-invalid]="form.controls.lastName.touched && form.controls.lastName.invalid" />
+            <div class="invalid-feedback">Povinné</div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label class="form-label">Prostřední jméno</label>
+            <input class="form-control" formControlName="middleName" />
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label class="form-label">Datum narození *</label>
+            <input type="date" class="form-control" formControlName="birthDate"
+              [class.is-invalid]="form.controls.birthDate.touched && form.controls.birthDate.invalid" />
+            <div class="invalid-feedback">Povinné</div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label class="form-label">Pohlaví *</label>
+            <div class="dropdown w-100">
+              <button type="button"
+                class="btn btn-outline-secondary dropdown-toggle w-100 text-start"
+                data-bs-toggle="dropdown">
+                {{ genderText() }}
+              </button>
+              <ul class="dropdown-menu w-100">
+                <li *ngFor="let g of genderOptions">
+                  <button type="button" class="dropdown-item" (click)="setGender(g.value)">
+                    {{ g.label }}
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div *ngIf="form.controls.gender.touched && form.controls.gender.invalid"
+              class="invalid-feedback d-block">
+              Povinné
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label class="form-label">E-mail *</label>
+            <input type="email" class="form-control" formControlName="email"
+              [class.is-invalid]="form.controls.email.touched && form.controls.email.invalid" />
+            <div class="invalid-feedback">Neplatný e-mail / povinné</div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label class="form-label">Telefon *</label>
+            <input class="form-control" formControlName="phoneNumber"
+              [class.is-invalid]="form.controls.phoneNumber.touched && form.controls.phoneNumber.invalid" />
+            <div class="invalid-feedback">Povinné</div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label class="form-label">Datum nástupu *</label>
+            <input type="date" class="form-control" formControlName="joinedDate"
+              [class.is-invalid]="form.controls.joinedDate.touched && form.controls.joinedDate.invalid" />
+            <div class="invalid-feedback">Povinné</div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label class="form-label">Datum ukončení</label>
+            <input type="date" class="form-control" formControlName="exitedDate" />
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label class="form-label">Aktuální plat v Kč *</label>
+            <input type="number" step="0.01" class="form-control" formControlName="salaryAmount"
+              [class.is-invalid]="form.controls.salaryAmount.touched && form.controls.salaryAmount.invalid" />
+            <div class="invalid-feedback">Plat je povinný</div>
+            <div class="form-text">Změna této hodnoty vytvoří nový záznam o platu.</div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label class="form-label">Nadřízený</label>
+            <div class="dropdown w-100">
+              <button type="button"
+                class="btn btn-outline-secondary dropdown-toggle w-100 text-start"
+                data-bs-toggle="dropdown">
+                {{ superiorText() }}
+              </button>
+              <ul class="dropdown-menu w-100 dropdown-scroll">
+                <li>
+                  <button type="button" class="dropdown-item" (click)="setSuperior(null)">— žádný —</button>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li *ngFor="let e of superiors()">
+                  <button type="button" class="dropdown-item" (click)="setSuperior(e.id!)">
+                    {{ e.firstName }} {{ e.lastName }}
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <label class="form-label">Adresa</label>
+            <div class="dropdown w-100">
+              <button type="button"
+                class="btn btn-outline-secondary dropdown-toggle w-100 text-start"
+                data-bs-toggle="dropdown">
+                {{ addressText() }}
+              </button>
+              <ul class="dropdown-menu w-100 dropdown-scroll">
+                <li>
+                  <button type="button" class="dropdown-item" (click)="setAddress(null)">— žádná —</button>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li *ngFor="let a of addresses()">
+                  <button type="button" class="dropdown-item" (click)="setAddress(a.id!)">
+                    {{ addressLabel(a) }}
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <label class="form-label">Pracovní pozice</label>
+            <div class="dropdown w-100" data-bs-auto-close="outside">
+              <button type="button"
+                class="btn btn-outline-secondary dropdown-toggle w-100 text-start"
+                data-bs-toggle="dropdown">
+                {{ jobCategoriesText() }}
+              </button>
+
+              <div class="dropdown-menu w-100 p-2 dropdown-scroll">
+                <button type="button" class="btn btn-sm btn-outline-secondary w-100 mb-2"
+                  (click)="clearJobCategories()">
+                  Vymazat výběr
+                </button>
+
+                <div class="form-check py-1" *ngFor="let jc of jobCategories()">
+                  <input class="form-check-input" type="checkbox"
+                    [id]="'jc-' + jc.id"
+                    [checked]="isJobCategorySelected(jc.id)"
+                    (change)="toggleJobCategory(jc.id, $any($event.target).checked)" />
+                  <label class="form-check-label" [for]="'jc-' + jc.id">
+                    {{ jc.name }}
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card-footer bg-white d-flex gap-2">
+        <button class="btn btn-primary" type="submit" [disabled]="form.invalid || saving()">
+          <span *ngIf="saving()" class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span>
+          Uložit
+        </button>
+        <a class="btn btn-outline-secondary" [routerLink]="['/employees', employeeId()]">Zrušit</a>
+      </div>
+    </div>
+
+    <div *ngIf="salaryError()" class="alert alert-danger">{{ salaryError() }}</div>
+
+    <div class="card shadow-sm">
+      <div class="card-header bg-white fw-semibold">Historie platů</div>
+
+      <div class="card-body p-0">
+        <div *ngIf="!salaries().length" class="p-3 text-body-secondary">Zatím žádné platy.</div>
+
+        <div *ngIf="salaries().length" class="table-responsive">
+          <table class="table table-sm table-hover align-middle mb-0">
+            <thead class="table-light">
+              <tr>
+                <th>Částka v Kč</th>
+                <th>Od</th>
+                <th>Do</th>
+                <th class="text-end"></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let s of salaries()">
+                <td style="min-width: 180px;">
+                  <ng-container *ngIf="editingSalaryId() === s.id; else viewAmount">
+                    <input class="form-control form-control-sm" type="number" step="0.01"
+                      [formControl]="salaryRowForm.controls.amount" />
+                  </ng-container>
+                  <ng-template #viewAmount>
+                    <span class="fw-semibold">{{ s.amount }}</span>
+                  </ng-template>
+                </td>
+
+                <td style="min-width: 170px;">
+                  <ng-container *ngIf="editingSalaryId() === s.id; else viewFrom">
+                    <input class="form-control form-control-sm" type="date"
+                      [formControl]="salaryRowForm.controls.from" />
+                  </ng-container>
+                  <ng-template #viewFrom>
+                    <span class="text-body-secondary">{{ s.from?.slice(0, 10) ?? '-' }}</span>
+                  </ng-template>
+                </td>
+
+                <td style="min-width: 170px;">
+                  <ng-container *ngIf="editingSalaryId() === s.id; else viewTo">
+                    <input class="form-control form-control-sm" type="date"
+                      [formControl]="salaryRowForm.controls.to" />
+                  </ng-container>
+                  <ng-template #viewTo>
+                    <span class="text-body-secondary">{{ s.to?.slice(0, 10) ?? '-' }}</span>
+                  </ng-template>
+                </td>
+
+                <td class="text-end" style="white-space: nowrap;">
+                  <ng-container *ngIf="editingSalaryId() === s.id; else rowBtns">
+                    <button class="btn btn-sm btn-primary me-2" type="button"
+                      (click)="saveSalaryRow(s.id!)" [disabled]="saving()">Uložit</button>
+                    <button class="btn btn-sm btn-outline-secondary" type="button"
+                      (click)="cancelSalaryEdit()" [disabled]="saving()">Zrušit</button>
+                  </ng-container>
+
+                  <ng-template #rowBtns>
+                    <button class="btn btn-sm btn-outline-primary" type="button"
+                      (click)="startSalaryEdit(s)" [disabled]="saving()">Upravit</button>
+                  </ng-template>
+                </td>
+              </tr>
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</form>

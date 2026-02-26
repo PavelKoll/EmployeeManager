@@ -1,0 +1,11 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+/* App-wide polish */
+body { background-color: #f8f9fa; }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.page-title { font-weight: 600; }
+.card { border-radius: 1rem; }
+.table thead th { white-space: nowrap; }

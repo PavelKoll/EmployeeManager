@@ -1,0 +1,80 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <div>
+    <h1 class="h4 page-title mb-0">Zaměstnanci</h1>
+    <div class="text-body-secondary small">Přehled všech zaměstnanců</div>
+  </div>
+
+  <a class="btn btn-primary" routerLink="/employees/new">
+    <i class="bi bi-plus-lg me-1"></i>Přidat
+  </a>
+</div>
+
+<div *ngIf="error()" class="alert alert-danger">
+  {{ error() }}
+</div>
+
+<div *ngIf="loading()" class="d-flex align-items-center gap-2 text-body-secondary mb-3">
+  <div class="spinner-border spinner-border-sm" aria-hidden="true"></div>
+  Načítám...
+</div>
+
+<ng-container *ngIf="!loading()">
+  <div *ngIf="!employees().length" class="card shadow-sm">
+    <div class="card-body text-body-secondary">
+      Žádní zaměstnanci.
+    </div>
+  </div>
+
+  <div *ngIf="employees().length" class="card shadow-sm">
+    <div class="card-body p-0">
+      <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+          <thead class="table-light">
+            <tr>
+              <th>Jméno</th>
+              <th class="d-none d-lg-table-cell">E-mail</th>
+              <th class="d-none d-md-table-cell">Telefon</th>
+              <th class="text-end" style="min-width: 220px;">Akce</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let e of employees()">
+              <td class="fw-semibold">
+                <a [routerLink]="['/employees', e.id]" class="text-body">
+                  {{ (e.firstName ?? '') + ' ' + (e.lastName ?? '') }}
+                </a>
+                <div class="small text-body-secondary" *ngIf="e.middleName">
+                  {{ e.middleName }}
+                </div>
+              </td>
+
+              <td class="d-none d-lg-table-cell text-body-secondary">
+                {{ e.email ?? '-' }}
+              </td>
+
+              <td class="d-none d-md-table-cell text-body-secondary">
+                {{ e.phoneNumber ?? '-' }}
+              </td>
+
+              <td class="text-end">
+                <div class="btn-group btn-group-sm" role="group" aria-label="Akce">
+                  <a class="btn btn-outline-secondary" [routerLink]="['/employees', e.id]">
+                    Detail
+                  </a>
+                  <a class="btn btn-outline-primary" [routerLink]="['/employees', e.id, 'edit']">
+                    Upravit
+                  </a>
+                  <button class="btn btn-outline-danger" type="button" (click)="delete(e)">
+                    Smazat
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+  </div>
+</ng-container>

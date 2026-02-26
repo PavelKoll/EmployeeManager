@@ -1,0 +1,121 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <a class="btn btn-sm btn-outline-secondary" routerLink="/employees">
+    <i class="bi bi-arrow-left me-1"></i>Zpět
+  </a>
+</div>
+
+<div *ngIf="error()" class="alert alert-danger">
+  {{ error() }}
+</div>
+
+<div *ngIf="loading()" class="d-flex align-items-center gap-2 text-body-secondary mb-3">
+  <div class="spinner-border spinner-border-sm" aria-hidden="true"></div>
+  Načítám...
+</div>
+
+<ng-container *ngIf="employee() as e">
+  <div class="d-flex justify-content-between align-items-start mb-3">
+    <div>
+      <h1 class="h4 page-title mb-0">
+        {{ e.firstName }} {{ e.lastName }}
+      </h1>
+      <div class="text-body-secondary small">Detail zaměstnance</div>
+    </div>
+  </div>
+
+  <div class="card shadow-sm mb-4">
+    <div class="card-body">
+      <dl class="row mb-0">
+        <dt class="col-sm-3 text-body-secondary">E-mail</dt>
+        <dd class="col-sm-9">{{ e.email ?? '-' }}</dd>
+
+        <dt class="col-sm-3 text-body-secondary">Telefon</dt>
+        <dd class="col-sm-9">{{ e.phoneNumber ?? '-' }}</dd>
+
+        <dt class="col-sm-3 text-body-secondary">Aktuální plat v Kč</dt>
+        <dd class="col-sm-9 fw-semibold">{{ currentSalary() ?? '-' }}</dd>
+
+        <dt class="col-sm-3 text-body-secondary">Datum narození</dt>
+        <dd class="col-sm-9">{{ asDate(e.birthDate) }}</dd>
+
+        <dt class="col-sm-3 text-body-secondary">Nástup</dt>
+        <dd class="col-sm-9">{{ asDate(e.joinedDate) }}</dd>
+
+        <dt class="col-sm-3 text-body-secondary">Ukončení</dt>
+        <dd class="col-sm-9">{{ asDate(e.exitedDate) }}</dd>
+
+        <dt class="col-sm-3 text-body-secondary">Pohlaví</dt>
+        <dd class="col-sm-9">{{ genderLabel(e.gender) }}</dd>
+
+        <dt class="col-sm-3 text-body-secondary">Nadřízený</dt>
+        <dd class="col-sm-9">
+          <ng-container *ngIf="e.superiorId as sid; else noSup">
+            <a [routerLink]="['/employees', sid]">{{ employeeName(sid) }}</a>
+          </ng-container>
+          <ng-template #noSup>-</ng-template>
+        </dd>
+
+        <dt class="col-sm-3 text-body-secondary">Adresa</dt>
+        <dd class="col-sm-9">{{ addressLabelById(e.addressId) }}</dd>
+
+        <dt class="col-sm-3 text-body-secondary">Pracovní pozice</dt>
+        <dd class="col-sm-9">
+          <span *ngIf="!(e.jobCategoryIds?.length)">-</span>
+          <ul *ngIf="e.jobCategoryIds?.length" class="mb-0">
+            <li *ngFor="let id of e.jobCategoryIds">{{ jobCategoryName(id) }}</li>
+          </ul>
+        </dd>
+
+        <dt class="col-sm-3 text-body-secondary">Podřízení</dt>
+        <dd class="col-sm-9">
+          <span *ngIf="!(e.subordinateIds?.length)">-</span>
+          <ul *ngIf="e.subordinateIds?.length" class="mb-0">
+            <li *ngFor="let sid of e.subordinateIds">
+              <a [routerLink]="['/employees', sid]">{{ employeeName(sid) }}</a>
+            </li>
+          </ul>
+        </dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="card shadow-sm mb-3">
+    <div class="card-header bg-white">
+      <div class="fw-semibold">Historie platů</div>
+    </div>
+
+    <div class="card-body p-0">
+      <div *ngIf="!salaries().length" class="p-3 text-body-secondary">
+        Zatím žádné platy.
+      </div>
+
+      <div *ngIf="salaries().length" class="table-responsive">
+        <table class="table table-sm table-striped align-middle mb-0">
+          <thead class="table-light">
+            <tr>
+              <th style="min-width: 140px;">Částka v Kč</th>
+              <th style="min-width: 140px;">Od</th>
+              <th style="min-width: 140px;">Do</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let s of salaries()">
+              <td class="fw-semibold">{{ s.amount }}</td>
+              <td class="text-body-secondary">{{ asDate(s.from) }}</td>
+              <td class="text-body-secondary">{{ asDate(s.to) }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex gap-2">
+    <a class="btn btn-primary" [routerLink]="['/employees', e.id, 'edit']">
+      <i class="bi bi-pencil-square me-1"></i>Upravit
+    </a>
+    <button class="btn btn-outline-danger" type="button" (click)="delete()">
+      <i class="bi bi-trash me-1"></i>Smazat
+    </button>
+  </div>
+</ng-container>

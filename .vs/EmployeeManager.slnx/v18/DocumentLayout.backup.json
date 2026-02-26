@@ -1,0 +1,358 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Projects\\EmployeeManager\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EmployeeManager.WebAPI\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Projects\\EmployeeManager\\docker-compose.yml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:docker-compose.yml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\.dockerignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EmployeeManager.WebAPI\\.dockerignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EmployeeManager.WebAPI\\Dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\appsettings.Production.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EmployeeManager.WebAPI\\appsettings.Production.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\appsettings.Development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EmployeeManager.WebAPI\\appsettings.Development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EmployeeManager.WebAPI\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Controllers\\SalariesController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EmployeeManager.WebAPI\\Controllers\\SalariesController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\AppDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EmployeeManager.WebAPI\\Data\\AppDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Dtos\\Salaries\\SalaryCreateDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EmployeeManager.WebAPI\\Data\\Dtos\\Salaries\\SalaryCreateDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Entities\\Salary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EmployeeManager.WebAPI\\Data\\Entities\\Salary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Dtos\\Salaries\\SalaryDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EmployeeManager.WebAPI\\Data\\Dtos\\Salaries\\SalaryDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Dtos\\Salaries\\SalaryUpdateDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EmployeeManager.WebAPI\\Data\\Dtos\\Salaries\\SalaryUpdateDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Controllers\\CitiesController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EmployeeManager.WebAPI\\Controllers\\CitiesController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Entities\\JobCategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EmployeeManager.WebAPI\\Data\\Entities\\JobCategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Controllers\\EmployeesContoller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EmployeeManager.WebAPI\\Controllers\\EmployeesContoller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Entities\\Employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EmployeeManager.WebAPI\\Data\\Entities\\Employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Dtos\\Employees\\EmployeeDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EmployeeManager.WebAPI\\Data\\Dtos\\Employees\\EmployeeDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Dtos\\Employees\\EmployeeCreateDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EmployeeManager.WebAPI\\Data\\Dtos\\Employees\\EmployeeCreateDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Dtos\\Employees\\EmployeeUpdateDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EmployeeManager.WebAPI\\Data\\Dtos\\Employees\\EmployeeUpdateDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Entities\\EmployeejobCategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EmployeeManager.WebAPI\\Data\\Entities\\EmployeejobCategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\Projects\\EmployeeManager\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "C:\\Projects\\EmployeeManager\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2026-02-23T19:34:18.384Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Dockerfile",
+              "RelativeDocumentMoniker": "EmployeeManager.WebAPI\\Dockerfile",
+              "ToolTip": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Dockerfile",
+              "RelativeToolTip": "EmployeeManager.WebAPI\\Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-23T19:29:48.446Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "EmployeeManager.WebAPI\\appsettings.json",
+              "ToolTip": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\appsettings.json",
+              "RelativeToolTip": "EmployeeManager.WebAPI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-23T19:15:27.988Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Program.cs",
+              "RelativeDocumentMoniker": "EmployeeManager.WebAPI\\Program.cs",
+              "ToolTip": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Program.cs",
+              "RelativeToolTip": "EmployeeManager.WebAPI\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T18:49:22.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": ".dockerignore",
+              "DocumentMoniker": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\.dockerignore",
+              "RelativeDocumentMoniker": "EmployeeManager.WebAPI\\.dockerignore",
+              "ToolTip": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\.dockerignore",
+              "RelativeToolTip": "EmployeeManager.WebAPI\\.dockerignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-23T19:35:32.957Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "EmployeeManager.WebAPI\\appsettings.Development.json",
+              "ToolTip": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\appsettings.Development.json",
+              "RelativeToolTip": "EmployeeManager.WebAPI\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-23T19:11:29.468Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.Production.json",
+              "DocumentMoniker": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\appsettings.Production.json",
+              "RelativeDocumentMoniker": "EmployeeManager.WebAPI\\appsettings.Production.json",
+              "ToolTip": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\appsettings.Production.json",
+              "RelativeToolTip": "EmployeeManager.WebAPI\\appsettings.Production.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-23T19:11:26.326Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SalariesController.cs",
+              "DocumentMoniker": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Controllers\\SalariesController.cs",
+              "RelativeDocumentMoniker": "EmployeeManager.WebAPI\\Controllers\\SalariesController.cs",
+              "ToolTip": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Controllers\\SalariesController.cs",
+              "RelativeToolTip": "EmployeeManager.WebAPI\\Controllers\\SalariesController.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAF4AAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T18:52:04.19Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Salary.cs",
+              "DocumentMoniker": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Entities\\Salary.cs",
+              "RelativeDocumentMoniker": "EmployeeManager.WebAPI\\Data\\Entities\\Salary.cs",
+              "ToolTip": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Entities\\Salary.cs",
+              "RelativeToolTip": "EmployeeManager.WebAPI\\Data\\Entities\\Salary.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T18:46:38.638Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SalaryDto.cs",
+              "DocumentMoniker": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Dtos\\Salaries\\SalaryDto.cs",
+              "RelativeDocumentMoniker": "EmployeeManager.WebAPI\\Data\\Dtos\\Salaries\\SalaryDto.cs",
+              "ToolTip": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Dtos\\Salaries\\SalaryDto.cs",
+              "RelativeToolTip": "EmployeeManager.WebAPI\\Data\\Dtos\\Salaries\\SalaryDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T18:46:57.139Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "EmployeeManager.WebAPI\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "EmployeeManager.WebAPI\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAmwC4AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T17:50:20.755Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "SalaryUpdateDto.cs",
+              "DocumentMoniker": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Dtos\\Salaries\\SalaryUpdateDto.cs",
+              "RelativeDocumentMoniker": "EmployeeManager.WebAPI\\Data\\Dtos\\Salaries\\SalaryUpdateDto.cs",
+              "ToolTip": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Dtos\\Salaries\\SalaryUpdateDto.cs",
+              "RelativeToolTip": "EmployeeManager.WebAPI\\Data\\Dtos\\Salaries\\SalaryUpdateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T18:47:00.945Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SalaryCreateDto.cs",
+              "DocumentMoniker": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Dtos\\Salaries\\SalaryCreateDto.cs",
+              "RelativeDocumentMoniker": "EmployeeManager.WebAPI\\Data\\Dtos\\Salaries\\SalaryCreateDto.cs",
+              "ToolTip": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Dtos\\Salaries\\SalaryCreateDto.cs",
+              "RelativeToolTip": "EmployeeManager.WebAPI\\Data\\Dtos\\Salaries\\SalaryCreateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T18:46:52.15Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CitiesController.cs",
+              "DocumentMoniker": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Controllers\\CitiesController.cs",
+              "RelativeDocumentMoniker": "EmployeeManager.WebAPI\\Controllers\\CitiesController.cs",
+              "ToolTip": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Controllers\\CitiesController.cs",
+              "RelativeToolTip": "EmployeeManager.WebAPI\\Controllers\\CitiesController.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAADoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T18:48:54.763Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "JobCategory.cs",
+              "DocumentMoniker": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Entities\\JobCategory.cs",
+              "RelativeDocumentMoniker": "EmployeeManager.WebAPI\\Data\\Entities\\JobCategory.cs",
+              "ToolTip": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Entities\\JobCategory.cs",
+              "RelativeToolTip": "EmployeeManager.WebAPI\\Data\\Entities\\JobCategory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T18:45:53.455Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Entities\\Employee.cs",
+              "RelativeDocumentMoniker": "EmployeeManager.WebAPI\\Data\\Entities\\Employee.cs",
+              "ToolTip": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Entities\\Employee.cs",
+              "RelativeToolTip": "EmployeeManager.WebAPI\\Data\\Entities\\Employee.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAcwBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T17:48:26.875Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "EmployeeDto.cs",
+              "DocumentMoniker": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Dtos\\Employees\\EmployeeDto.cs",
+              "RelativeDocumentMoniker": "EmployeeManager.WebAPI\\Data\\Dtos\\Employees\\EmployeeDto.cs",
+              "ToolTip": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Dtos\\Employees\\EmployeeDto.cs",
+              "RelativeToolTip": "EmployeeManager.WebAPI\\Data\\Dtos\\Employees\\EmployeeDto.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAcwBwAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T17:53:32.005Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "EmployeesContoller.cs",
+              "DocumentMoniker": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Controllers\\EmployeesContoller.cs",
+              "RelativeDocumentMoniker": "EmployeeManager.WebAPI\\Controllers\\EmployeesContoller.cs",
+              "ToolTip": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Controllers\\EmployeesContoller.cs",
+              "RelativeToolTip": "EmployeeManager.WebAPI\\Controllers\\EmployeesContoller.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAcwFQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T17:55:18.34Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "EmployeeCreateDto.cs",
+              "DocumentMoniker": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Dtos\\Employees\\EmployeeCreateDto.cs",
+              "RelativeDocumentMoniker": "EmployeeManager.WebAPI\\Data\\Dtos\\Employees\\EmployeeCreateDto.cs",
+              "ToolTip": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Dtos\\Employees\\EmployeeCreateDto.cs",
+              "RelativeToolTip": "EmployeeManager.WebAPI\\Data\\Dtos\\Employees\\EmployeeCreateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T17:53:13.2Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "EmployeeUpdateDto.cs",
+              "DocumentMoniker": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Dtos\\Employees\\EmployeeUpdateDto.cs",
+              "RelativeDocumentMoniker": "EmployeeManager.WebAPI\\Data\\Dtos\\Employees\\EmployeeUpdateDto.cs",
+              "ToolTip": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Dtos\\Employees\\EmployeeUpdateDto.cs",
+              "RelativeToolTip": "EmployeeManager.WebAPI\\Data\\Dtos\\Employees\\EmployeeUpdateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T17:53:38.519Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "EmployeejobCategory.cs",
+              "DocumentMoniker": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Entities\\EmployeejobCategory.cs",
+              "RelativeDocumentMoniker": "EmployeeManager.WebAPI\\Data\\Entities\\EmployeejobCategory.cs",
+              "ToolTip": "C:\\Projects\\EmployeeManager\\EmployeeManager.WebAPI\\Data\\Entities\\EmployeejobCategory.cs",
+              "RelativeToolTip": "EmployeeManager.WebAPI\\Data\\Entities\\EmployeejobCategory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T17:47:59.883Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

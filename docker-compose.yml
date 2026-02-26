@@ -1,0 +1,16 @@
+services:
+  api:
+    build:
+      context: ./EmployeeManager.WebAPI
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      Cors__AllowedOrigin: "http://localhost:4200"
+      ConnectionStrings__Default: "Data Source=/app/data/employeemanager.db"
+    volumes:
+      - employee_db:/app/data
+
+volumes:
+  employee_db:

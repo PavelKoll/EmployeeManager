@@ -1,0 +1,5 @@
+/* employee-detail.page.css */
+dl.row dt { padding-top: .35rem; }
+dl.row dd { padding-top: .35rem; }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }

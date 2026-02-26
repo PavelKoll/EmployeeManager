@@ -1,0 +1,332 @@
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <div>
+    <h1 class="h4 page-title mb-0">Číselníky</h1>
+    <div class="text-body-secondary small">Správa států, měst, adres a pracovních pozic</div>
+  </div>
+
+  <button class="btn btn-sm btn-outline-secondary" type="button" (click)="loadAll()" [disabled]="loading()">
+    <span *ngIf="loading()" class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span>
+    Načíst znovu
+  </button>
+</div>
+
+<div class="row g-4">
+  <div class="col-12 col-xl-6">
+    <div class="card shadow-sm">
+      <div class="card-header bg-white fw-semibold">Státy</div>
+      <div class="card-body">
+        <div *ngIf="countryAlert() as a" class="alert py-2 mb-3" [class.alert-success]="a.type==='success'"
+             [class.alert-danger]="a.type==='danger'" [class.alert-info]="a.type==='info'">
+          {{ a.message }}
+        </div>
+
+        <div class="table-responsive">
+          <table class="table table-sm table-hover align-middle mb-0">
+            <thead class="table-light">
+              <tr>
+                <th style="width: 45%;">Název</th>
+                <th style="width: 20%;">Kód</th>
+                <th class="text-end" style="width: 35%;"></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  <input class="form-control form-control-sm" placeholder="Název" [formControl]="countryCreateForm.controls.name">
+                </td>
+                <td>
+                  <input class="form-control form-control-sm" placeholder="Kód" [formControl]="countryCreateForm.controls.code">
+                </td>
+                <td class="text-end">
+                  <button class="btn btn-sm btn-primary" type="button" (click)="createCountry()">
+                    <i class="bi bi-plus-lg me-1"></i>Přidat
+                  </button>
+                </td>
+              </tr>
+
+              <tr *ngFor="let c of countries()">
+                <td>
+                  <ng-container *ngIf="editingCountryId() === c.id; else cName">
+                    <input class="form-control form-control-sm" [formControl]="countryEditForm.controls.name">
+                  </ng-container>
+                  <ng-template #cName><span class="fw-semibold">{{ c.name }}</span></ng-template>
+                </td>
+
+                <td>
+                  <ng-container *ngIf="editingCountryId() === c.id; else cCode">
+                    <input class="form-control form-control-sm" [formControl]="countryEditForm.controls.code">
+                  </ng-container>
+                  <ng-template #cCode><span class="text-body-secondary">{{ c.code ?? '-' }}</span></ng-template>
+                </td>
+
+                <td class="text-end">
+                  <ng-container *ngIf="editingCountryId() === c.id; else cBtns">
+                    <div class="d-flex flex-wrap gap-1 justify-content-end">
+                      <button class="btn btn-sm btn-primary" type="button" (click)="saveCountry(c.id!)">Uložit</button>
+                      <button class="btn btn-sm btn-outline-secondary" type="button" (click)="cancelCountryEdit()">Zrušit</button>
+                    </div>
+                  </ng-container>
+
+                  <ng-template #cBtns>
+                    <div class="d-flex flex-wrap gap-1 justify-content-end">
+                      <button class="btn btn-sm btn-outline-primary" type="button" (click)="startCountryEdit(c)">Upravit</button>
+                      <button class="btn btn-sm btn-outline-danger" type="button" (click)="deleteCountry(c.id!)">Smazat</button>
+                    </div>
+                  </ng-template>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-xl-6">
+    <div class="card shadow-sm">
+      <div class="card-header bg-white fw-semibold">Města</div>
+      <div class="card-body">
+        <div *ngIf="cityAlert() as a" class="alert py-2 mb-3" [class.alert-success]="a.type==='success'"
+             [class.alert-danger]="a.type==='danger'" [class.alert-info]="a.type==='info'">
+          {{ a.message }}
+        </div>
+
+        <div class="table-responsive">
+          <table class="table table-sm table-hover align-middle mb-0">
+            <thead class="table-light">
+              <tr>
+                <th style="min-width: 160px;">Název</th>
+                <th style="min-width: 140px;">Stát</th>
+                <th class="text-end" style="min-width: 140px;"></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  <input class="form-control form-control-sm" placeholder="Název" [formControl]="cityCreateForm.controls.name">
+                </td>
+                <td>
+                  <select class="form-select form-select-sm" [formControl]="cityCreateForm.controls.countryId">
+                    <option [ngValue]="null">— vyberte —</option>
+                    <option *ngFor="let c of countries()" [ngValue]="c.id">{{ c.name }}</option>
+                  </select>
+                </td>
+                <td class="text-end">
+                  <button class="btn btn-sm btn-primary" type="button" (click)="createCity()">
+                    <i class="bi bi-plus-lg me-1"></i>Přidat
+                  </button>
+                </td>
+              </tr>
+
+              <tr *ngFor="let c of cities()">
+                <td>
+                  <ng-container *ngIf="editingCityId() === c.id; else cityName">
+                    <input class="form-control form-control-sm" [formControl]="cityEditForm.controls.name">
+                  </ng-container>
+                  <ng-template #cityName><span class="fw-semibold">{{ c.name }}</span></ng-template>
+                </td>
+
+                <td>
+                  <ng-container *ngIf="editingCityId() === c.id; else cityCountry">
+                    <select class="form-select form-select-sm" [formControl]="cityEditForm.controls.countryId">
+                      <option [ngValue]="null">— vyberte —</option>
+                      <option *ngFor="let cc of countries()" [ngValue]="cc.id">{{ cc.name }}</option>
+                    </select>
+                  </ng-container>
+                  <ng-template #cityCountry><span class="text-body-secondary">{{ countryName(c.countryId) }}</span></ng-template>
+                </td>
+
+                <td class="text-end" style="white-space: nowrap;">
+                  <ng-container *ngIf="editingCityId() === c.id; else cityBtns">
+                    <button class="btn btn-sm btn-primary me-2" type="button" (click)="saveCity(c.id!)">Uložit</button>
+                    <button class="btn btn-sm btn-outline-secondary" type="button" (click)="cancelCityEdit()">Zrušit</button>
+                  </ng-container>
+
+                  <ng-template #cityBtns>
+                    <button class="btn btn-sm btn-outline-primary me-1" type="button" (click)="startCityEdit(c)">Upravit</button>
+                    <button class="btn btn-sm btn-outline-danger" type="button" (click)="deleteCity(c.id!)">Smazat</button>
+                  </ng-template>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <div class="card shadow-sm">
+      <div class="card-header bg-white fw-semibold">Pracovní pozice</div>
+      <div class="card-body">
+        <div *ngIf="jobCategoryAlert() as a" class="alert py-2 mb-3" [class.alert-success]="a.type==='success'"
+             [class.alert-danger]="a.type==='danger'" [class.alert-info]="a.type==='info'">
+          {{ a.message }}
+        </div>
+
+        <div class="table-responsive">
+          <table class="table table-sm table-hover align-middle mb-0">
+            <thead class="table-light">
+              <tr>
+                <th style="min-width: 360px;">Název</th>
+                <th class="text-end" style="min-width: 160px;"></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  <input class="form-control form-control-sm" placeholder="Název" [formControl]="jobCategoryCreateForm.controls.name">
+                </td>
+                <td class="text-end">
+                  <button class="btn btn-sm btn-primary" type="button" (click)="createJobCategory()">
+                    <i class="bi bi-plus-lg me-1"></i>Přidat
+                  </button>
+                </td>
+              </tr>
+
+              <tr *ngFor="let jc of jobCategories()">
+                <td>
+                  <ng-container *ngIf="editingJobCategoryId() === jc.id; else jcName">
+                    <input class="form-control form-control-sm" [formControl]="jobCategoryEditForm.controls.name">
+                  </ng-container>
+                  <ng-template #jcName><span class="fw-semibold">{{ jc.name }}</span></ng-template>
+                </td>
+
+                <td class="text-end" style="white-space: nowrap;">
+                  <ng-container *ngIf="editingJobCategoryId() === jc.id; else jcBtns">
+                    <button class="btn btn-sm btn-primary me-2" type="button" (click)="saveJobCategory(jc.id!)">Uložit</button>
+                    <button class="btn btn-sm btn-outline-secondary" type="button" (click)="cancelJobCategoryEdit()">Zrušit</button>
+                  </ng-container>
+
+                  <ng-template #jcBtns>
+                    <button class="btn btn-sm btn-outline-primary me-2" type="button" (click)="startJobCategoryEdit(jc)">Upravit</button>
+                    <button class="btn btn-sm btn-outline-danger" type="button" (click)="deleteJobCategory(jc.id!)">Smazat</button>
+                  </ng-template>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <div class="card shadow-sm">
+      <div class="card-header bg-white fw-semibold">Adresy</div>
+      <div class="card-body">
+        <div *ngIf="addressAlert() as a" class="alert py-2 mb-3" [class.alert-success]="a.type==='success'"
+             [class.alert-danger]="a.type==='danger'" [class.alert-info]="a.type==='info'">
+          {{ a.message }}
+        </div>
+
+        <div class="table-responsive">
+          <table class="table table-sm table-hover align-middle mb-0">
+            <thead class="table-light">
+              <tr>
+                <th style="min-width: 220px;">Ulice</th>
+                <th style="min-width: 120px;">Číslo popisné</th>
+                <th style="min-width: 140px;">PSČ</th>
+                <th style="min-width: 220px;">Město</th>
+                <th style="min-width: 220px;">Stát</th>
+                <th class="text-end" style="min-width: 160px;"></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td><input class="form-control form-control-sm" placeholder="Ulice" [formControl]="addressCreateForm.controls.street"></td>
+                <td><input class="form-control form-control-sm" placeholder="Číslo" [formControl]="addressCreateForm.controls.houseNumber"></td>
+                <td><input class="form-control form-control-sm" placeholder="PSČ" [formControl]="addressCreateForm.controls.zipCode"></td>
+
+                <td>
+                  <select class="form-select form-select-sm" [formControl]="addressCreateForm.controls.cityId">
+                    <option [ngValue]="null">— vyberte —</option>
+                    <option *ngFor="let c of cities()" [ngValue]="c.id">{{ c.name }}</option>
+                  </select>
+                </td>
+
+                <td>
+                  <select class="form-select form-select-sm" [formControl]="addressCreateForm.controls.countryId">
+                    <option [ngValue]="null">— vyberte —</option>
+                    <option *ngFor="let c of countries()" [ngValue]="c.id">{{ c.name }}</option>
+                  </select>
+                </td>
+
+                <td class="text-end">
+                  <button class="btn btn-sm btn-primary" type="button" (click)="createAddress()">
+                    <i class="bi bi-plus-lg me-1"></i>Přidat
+                  </button>
+                </td>
+              </tr>
+
+              <tr *ngFor="let a of addresses()">
+                <td>
+                  <ng-container *ngIf="editingAddressId() === a.id; else aStreet">
+                    <input class="form-control form-control-sm" [formControl]="addressEditForm.controls.street">
+                  </ng-container>
+                  <ng-template #aStreet><span class="fw-semibold">{{ a.street }}</span></ng-template>
+                </td>
+
+                <td>
+                  <ng-container *ngIf="editingAddressId() === a.id; else aHouse">
+                    <input class="form-control form-control-sm" [formControl]="addressEditForm.controls.houseNumber">
+                  </ng-container>
+                  <ng-template #aHouse><span class="text-body-secondary">{{ a.houseNumber ?? '-' }}</span></ng-template>
+                </td>
+
+                <td>
+                  <ng-container *ngIf="editingAddressId() === a.id; else aZip">
+                    <input class="form-control form-control-sm" [formControl]="addressEditForm.controls.zipCode">
+                  </ng-container>
+                  <ng-template #aZip><span class="text-body-secondary">{{ a.zipCode ?? '-' }}</span></ng-template>
+                </td>
+
+                <td>
+                  <ng-container *ngIf="editingAddressId() === a.id; else aCity">
+                    <select class="form-select form-select-sm" [formControl]="addressEditForm.controls.cityId">
+                      <option [ngValue]="null">— vyberte —</option>
+                      <option *ngFor="let c of cities()" [ngValue]="c.id">{{ c.name }}</option>
+                    </select>
+                  </ng-container>
+                  <ng-template #aCity><span class="text-body-secondary">{{ cityName(a.cityId) }}</span></ng-template>
+                </td>
+
+                <td>
+                  <ng-container *ngIf="editingAddressId() === a.id; else aCountry">
+                    <select class="form-select form-select-sm" [formControl]="addressEditForm.controls.countryId">
+                      <option [ngValue]="null">— vyberte —</option>
+                      <option *ngFor="let c of countries()" [ngValue]="c.id">{{ c.name }}</option>
+                    </select>
+                  </ng-container>
+                  <ng-template #aCountry><span class="text-body-secondary">{{ countryName(a.countryId) }}</span></ng-template>
+                </td>
+
+                <td class="text-end" style="white-space: nowrap;">
+                  <ng-container *ngIf="editingAddressId() === a.id; else aBtns">
+                    <button class="btn btn-sm btn-primary me-2" type="button" (click)="saveAddress(a.id!)">Uložit</button>
+                    <button class="btn btn-sm btn-outline-secondary" type="button" (click)="cancelAddressEdit()">Zrušit</button>
+                  </ng-container>
+
+                  <ng-template #aBtns>
+                    <button class="btn btn-sm btn-outline-primary me-2" type="button" (click)="startAddressEdit(a)">Upravit</button>
+                    <button class="btn btn-sm btn-outline-danger" type="button" (click)="deleteAddress(a.id!)">Smazat</button>
+                  </ng-template>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

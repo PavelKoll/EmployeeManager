@@ -1,0 +1,111 @@
+# ---------------------------
+# OS / Editor / IDE
+# ---------------------------
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.cache
+*.log
+
+# Visual Studio
+.vs/
+**/.cs/
+*.rsuser
+
+# Rider
+*.sln.iml
+
+# ---------------------------
+# .NET / ASP.NET
+# ---------------------------
+**/bin/
+**/obj/
+**/[Bb]in/
+**/[Oo]bj/
+
+# build artifacts
+artifacts/
+TestResults/
+coverage/
+*.pdb
+*.mdb
+
+# user-specific settings
+appsettings.*.json.user
+secrets.json
+
+# EF / local dev (SQLite)
+*.db
+*.db-shm
+*.db-wal
+
+# ---------------------------
+# Node / Angular
+# ---------------------------
+**/node_modules/
+**/dist/
+**/.angular/
+**/.cache/
+**/.npm/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Angular environment files (volitelně: nech, pokud je chceš verzovat)
+# **/src/environments/environment*.ts
+
+# ---------------------------
+# Docker / misc
+# ---------------------------
+**/.dockerignore
+
+# ---------------------------
+# Local tooling files
+# ---------------------------
+*.tgz
+*.zip
+
+
+# .NET
+**/bin/
+**/obj/
+**/publish/
+*.user
+*.suo
+
+# Node/Angular
+**/node_modules/
+**/dist/
+
+# OS / misc
+.DS_Store
+*.zip
+
+# .NET
+**/bin/
+**/obj/
+**/publish/
+
+# Node/Angular
+**/node_modules/
+**/dist/
+
+# OS / misc
+.DS_Store
+*.zip
+
+**/bin/
+**/obj/
+**/publish/
+**/node_modules/
+**/dist/
+.DS_Store
